@@ -127,9 +127,9 @@ _start:
 	movl $SYS_EXIT, %eax
 	int $INIT_LINUX
 
-	/*Function wich checs if identifying number is correct*/
+	/*Function which check if identifying number is correct*/
 	/*Parameters:*/
-		/*Lugn sum*/
+		/*Luhn sum*/
 	/*Returns:*/
 		/*1 - if number is correct*/
 		/*0 - otherwise*/
@@ -154,7 +154,7 @@ _start:
 		leave
 		ret
 
-	 /*Function wich calculates sum according to Luhn algorithm*/
+	 /*Function which calculates sum according to Luhn algorithm*/
 	 /*Parameters:*/
 		 /*Size of the buffer*/
 		 /*Buffer address*/
@@ -171,7 +171,7 @@ _start:
 		movl PARAM1(%ebp), %edi
 		decl %edi
 
-		/*%ebx is an address of first byte in buffer*/
+		/*%ebx is an address to the first byte in buffer*/
 		movl PARAM2(%ebp), %ebx
 
 		/*%ecx is a sum which will be returned*/
