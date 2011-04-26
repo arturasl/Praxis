@@ -56,7 +56,7 @@ def hexatridecimal_to_dec(test_str):
 
     for character in list(test_str):
         code = ord(character)
-        if ord('0') <= code and code <= ord('1'):
+        if ord('0') <= code and code <= ord('9'):
             result += (code - ord('0')) * 36 ** pos
         elif ord('A') <= code and code <= ord('Z'):
             result += (code - ord('A') + 10) * 36 ** pos
