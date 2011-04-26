@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# -*- coding: utf-8 -*-
 
 """ http://programmingpraxis.com/2011/04/26/miscellanea/ """
 
@@ -41,19 +42,15 @@ def is_prime(number):
         return False
 
     for i in range(3, int(sqrt(number)) + 1, 2):
-        print i
         if number % i == 0:
             return False
 
     return True
 
 
-# probably cheating
-print is_prime(int('PRAXIS', 36))
-
 def hexatridecimal_to_dec(test_str):
     """ converts hexatridecimal string to decimal number """
-    test_str = 'PRAXIS'
+
     pos = len(test_str) - 1
     result = 0
 
@@ -72,6 +69,10 @@ def hexatridecimal_to_dec(test_str):
 
 
 print is_prime(hexatridecimal_to_dec('PRAXIS'))
+
+# probably cheating
+
+print is_prime(int('PRAXIS', 36))
 
 # Split a list
 
@@ -96,7 +97,8 @@ def split_list(first_node):
     if first_node is None:
         return (None, None)
 
-    while double_next.next_node is not None and double_next.next_node.next_node is not None:
+    while double_next.next_node is not None \
+        and double_next.next_node.next_node is not None:
         double_next = double_next.next_node.next_node
         split_at = split_at.next_node
 
